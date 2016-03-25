@@ -1,17 +1,18 @@
-##
-## Takosan Test
-##
+assert("Takosan#attrs") do
+  t = Takosan.new
 
-assert("Takosan#hello") do
-  t = Takosan.new "hello"
-  assert_equal("hello", t.hello)
-end
+  assert_equal(t.url, 'http://127.0.0.1:4979')
+  assert_equal(t.channel, '#all')
+  assert_equal(t.name, 'takosan')
+  assert_equal(t.icon, 'https://raw.githubusercontent.com/kentaro/takosan/master/takosan.jpg')
 
-assert("Takosan#bye") do
-  t = Takosan.new "hello"
-  assert_equal("hello bye", t.bye)
-end
+  t.url = 'http://1.2.3.4:5678'
+  t.channel = '#nothing'
+  t.name = 'ikasan'
+  t.icon = ':splatoon:'
 
-assert("Takosan.hi") do
-  assert_equal("hi!!", Takosan.hi)
+  assert_equal(t.url, 'http://1.2.3.4:5678')
+  assert_equal(t.channel, '#nothing')
+  assert_equal(t.name, 'ikasan')
+  assert_equal(t.icon, ':splatoon:')
 end
