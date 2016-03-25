@@ -4,5 +4,5 @@ MRuby::Build.new do |conf|
   conf.gem '../mruby-takosan'
   conf.enable_test
 
-  conf.add_dependency 'mruby-httprequest'
+  conf.gem :github => 'matsumoto-r/mruby-httprequest'
 end
