@@ -1,7 +1,7 @@
 mruby-takosan   [![Build Status](https://travis-ci.org/hfm/mruby-takosan.svg?branch=master)](https://travis-ci.org/hfm/mruby-takosan)
 ===
 
-MRuby wrapper of [Takosan](https://github.com/kentaro/takosan)
+[mruby](https://github.com/mruby/mruby) wrapper of [Takosan](https://github.com/kentaro/takosan)
 
 install by mrbgems
 ---
