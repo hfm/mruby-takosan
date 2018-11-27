@@ -1,15 +1,20 @@
+sude: false
 language: c
+addons:
+  apt:
+    packages:
+      - rake
+      - bison
+      - git
+      - gperf
 compiler:
   - gcc
   - clang
-before_install:
-    - sudo apt-get -qq update
-install:
-    - sudo apt-get -qq install rake bison git gperf
-before_script:
-  - cd ../
-  - git clone https://github.com/mruby/mruby.git
-  - cd mruby
-  - cp -fp ../mruby-takosan/.travis_build_config.rb build_config.rb
+env:
+  - MRUBY_VERSION=1.4.1
+  - MRUBY_VERSION=master
+matrix:
+  allow_failures:
+    - env: MRUBY_VERSION=master
 script:
-  - make all test
+  - rake test
